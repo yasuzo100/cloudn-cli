@@ -1,25 +1,59 @@
-<<<<<<< HEAD
-# CloudStack Shell
+## Cloudn CLI
 
 Shell for CloudStack API
 
 ## Installation
 
-Add this line to your application's Gemfile:
+## Setup the Ruby
 
-    gem 'cloudstack_shell'
+1.Install Ruby for your machine by using "rbenv"
 
-And then execute:
+    $ git clone git://github.com/sstephenson/rbenv.git .rbenv 
+    $ echo 'export PATH="~/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    $ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    $ source ~/.bash_profile
+    $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    $ yum install readline libtool openssl openssl-devel
+    $ rbenv install 2.0.0-p247
+    $ rbenv global 2.0.0-p247
 
-    $ bundle
+2.Clone the Cloudn CLI to your machine
+    
+    $ git clone https://github.com/nttcom/cloudn-cli.git
 
-Or install it yourself as:
-
-    $ gem install cloudstack_shell
-
+## Setup the Cloudn CLI
+    
+    $ gem install bundler rb-readline
+    $ rbenv rehash 
+    $ bundle install --path=vender/bundle
+    $ echo 'export PATH=$PATH:/<Your directory>/bin' >> ~/.bash_profile source ~/.bash_profile
+      
 ## Usage
 
-TODO: Write usage instructions here
+1.Please set your configuration to config.yml
+
+    $ vi config.yml
+
+2.Then you can execute Cloudn CLI
+
+    $ cloudstack_shell.rb
+
+## Commands
+
+1.Refer the commands you can execute
+
+    > help
+
+2.Switch the account of CloudStack
+
+    > user <account name you set>
+    
+3.Execute the Cloudn / CloudStack API
+
+    ex.
+    > listUsers
+    
+    Tab completion can be used for API commands and parameters
 
 ## Contributing
 
@@ -28,7 +62,3 @@ TODO: Write usage instructions here
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
-=======
-cloudn-cli
-==========
->>>>>>> 9308149... Initial commit
