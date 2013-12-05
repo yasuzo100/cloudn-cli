@@ -1,0 +1,10 @@
+:url:    "<Set your endpoint of CloudStack API>"
+:raw_output: true
+:json: true
+:users:
+ :<Set your name 1>:
+    :api_key:    "<Set your api key>"
+    :secret_key: "<Set your secret key>"
+ :<Set your name 2>:
+    :api_key:    "<Set your api key>"
+    :secret_key: "<Set your secret key>"
