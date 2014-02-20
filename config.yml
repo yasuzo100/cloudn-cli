@@ -8,3 +8,4 @@
  :<Set your name 2>:
     :api_key:    "<Set your api key>"
     :secret_key: "<Set your secret key>"
+    :api_location: "Cloudn"
