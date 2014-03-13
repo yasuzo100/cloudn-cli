@@ -7,16 +7,16 @@ require "crack"
 module CloudStack
   class Client
     def initialize(opt)
-      @api_key    = opt[:api_key].freeze
-      @secret_key = opt[:secret_key].freeze
       url = opt[:url]
       @url = url.is_a?(URI::HTTP) ? url : URI.parse(url)
-      @url.freeze      
+      @url.freeze
+      @api_key    = opt[:api_key].freeze
+      @secret_key = opt[:secret_key].freeze
       @api_location = opt[:api_location].freeze
-      @json       = opt[:json].freeze
+      @json       = opt[:json]
     end
 
-    attr_reader :json, :api_location
+    attr_reader :url, :json, :api_location
 
     def get_raw(param_hash)
       param_str = make_param_str(param_hash)
@@ -24,7 +24,6 @@ module CloudStack
       url.query = param_str
       begin
         response_text = OpenURI.open_uri(url,
-	:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
         "User-Agent" => "CloudStackShell/#{RUBY_VERSION}",
         "X-api-location" => @api_location
         ).read

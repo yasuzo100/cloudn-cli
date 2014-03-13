@@ -4,6 +4,7 @@ require "termcolor" # for simple colorize
 require "coderay"   # for syntax highlight
 require "rexml/document"
 require "erb"
+require "open-uri"
 require "cgi"
 require_relative "client"
 
@@ -13,10 +14,13 @@ module CloudStack
       @name       = name.freeze
       @api_key    = opt[:api_key].freeze
       @secret_key = opt[:secret_key].freeze
+      url = opt[:url]
+      @url = url.is_a?(URI::HTTP) ? url : URI.parse(url)
+      @url.freeze      
       @api_location = opt[:api_location].freeze
     end
 
-    attr_reader :name, :api_key, :secret_key, :api_location
+    attr_reader :name, :api_key, :secret_key, :url, :api_location
   end
 
   class Shell
@@ -58,7 +62,7 @@ module CloudStack
 
     def create_client
       @client = CloudStack::Client.new(
-        url: @url,
+        url: @current_user.url,
         api_key: @current_user.api_key,
         secret_key: @current_user.secret_key,
         api_location: @current_user.api_location,
