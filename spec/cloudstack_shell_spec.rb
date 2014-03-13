@@ -6,7 +6,7 @@ require_relative "spec_helper"
 include CloudStack
 
 describe User do
-  subject { User.new("name", api_key: "foo", secret_key: "bar") }
+  subject { User.new("name", api_key: "foo", secret_key: "bar", url: "url") }
 
   its(:name) do
     should == "name"
@@ -20,6 +20,11 @@ describe User do
 
   its(:secret_key) do
     should == "bar"
+    should be_frozen
+  end
+
+  its(:url) do
+    should == "url"
     should be_frozen
   end
 end
