@@ -32,7 +32,7 @@ end
 describe Shell do
   include ShellHelpers
 
-  let(:script) { "bin/cloudn_cli.rb" }
+  let(:script) { "bin/cloudn_cli" }
 
   context "command not exist" do
     subject { capture_err("foo") }
