@@ -1,9 +1,9 @@
 require "open3"
 require "termcolor"
-require_relative "../lib/cloudstack_shell/shell"
+require_relative "../lib/cloudn_cli/shell"
 require_relative "spec_helper"
 
-include CloudStack
+include Cloudn
 
 describe User do
   subject { User.new("name", api_key: "foo", secret_key: "bar", url: "url") }
@@ -32,7 +32,7 @@ end
 describe Shell do
   include ShellHelpers
 
-  let(:script) { "bin/cloudstack_shell.rb" }
+  let(:script) { "bin/cloudn.rb" }
 
   context "command not exist" do
     subject { capture_err("foo") }

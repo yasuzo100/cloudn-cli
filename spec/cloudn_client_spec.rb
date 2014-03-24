@@ -1,6 +1,6 @@
-require_relative "../lib/cloudstack_shell/client"
+require_relative "../lib/cloudn_cli/client"
 
-include CloudStack
+include Cloudn
 
 describe Client do
   let(:config) do

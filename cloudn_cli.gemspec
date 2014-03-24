@@ -1,15 +1,15 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'cloudstack_shell/version'
+require 'cloudn_cli/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "cloudstack_shell"
-  spec.version       = CloudStack::Shell::VERSION
+  spec.name          = "cloudn_cli"
+  spec.version       = Cloudn::Shell::VERSION
   spec.authors       = [""]
   spec.email         = [""]
-  spec.description   = %q{Shell for CloudStack API}
-  spec.summary       = %q{Shell for CloudStack API}
+  spec.description   = %q{Shell for Cloudn API}
+  spec.summary       = %q{Shell for Cloudn API}
   spec.homepage      = ""
   spec.license       = ""
 
@@ -27,3 +27,4 @@ Gem::Specification.new do |spec|
   spec.add_dependency("coderay")
   spec.add_dependency("httpclient")
 end
+
