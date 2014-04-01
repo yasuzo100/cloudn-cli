@@ -1,4 +1,4 @@
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in cloudstack_shell.gemspec
+# Specify your gem's dependencies in cloudn_cli.gemspec
 gemspec

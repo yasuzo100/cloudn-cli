@@ -8,7 +8,7 @@ require "open-uri"
 require "cgi"
 require_relative "client"
 
-module CloudStack
+module Cloudn
   class User
     def initialize(name, opt)
       @name       = name.freeze
@@ -61,7 +61,7 @@ module CloudStack
     private
 
     def create_client
-      @client = CloudStack::Client.new(
+      @client = Cloudn::Client.new(
         url: @current_user.url,
         api_key: @current_user.api_key,
         secret_key: @current_user.secret_key,
@@ -161,7 +161,7 @@ module CloudStack
     Usage = <<-EOS
 Usage: command [parameter1=value2 parameter2=value2 ...]
 
-CloudStack Shell Command:
+Cloudn Cli Command:
   exit|quit:
     exit the shell
   config:
@@ -177,7 +177,7 @@ CloudStack Shell Command:
   users:
     show users
   eval { # ruby code }:
-    eval ruby code in CloudStack::Client instance context
+    eval ruby code in Cloudn::Client instance context
     EOS
 
     NON_WHITESPACE_REGEXP = %r![^\s#{[0x3000].pack("U")}]!
@@ -292,5 +292,5 @@ CloudStack Shell Command:
 end
 
 if $PROGRAM_NAME == __FILE__
-  p CloudStack::Shell.new("../../config.yml")
+  p Cloudn::Shell.new("../../config.yml")
 end

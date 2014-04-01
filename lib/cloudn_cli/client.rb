@@ -4,7 +4,7 @@ require "base64"
 require "json" #XXX: should i use Crack::JSON?
 require "crack"
 
-module CloudStack
+module Cloudn
   class Client
     def initialize(opt)
       @api_key    = opt[:api_key].freeze
@@ -25,7 +25,7 @@ module CloudStack
       begin
         response_text = OpenURI.open_uri(url,
 	:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
-        "User-Agent" => "CloudStackShell/#{RUBY_VERSION}",
+        "User-Agent" => "Cloudn_cli/#{RUBY_VERSION}",
         "X-api-location" => @api_location
         ).read
       rescue OpenURI::HTTPError => ex
@@ -98,6 +98,6 @@ if $PROGRAM_NAME == __FILE__
   require "pp"
 
   config = YAML.load_file("config.yml")
-  cs = CloudStack::Client.new(config)
+  cs = Cloudn::Client.new(config)
   pp cs.get(command: :listServiceOfferings)
 end
