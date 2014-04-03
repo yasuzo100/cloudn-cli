@@ -1,14 +1,14 @@
-:url:    "<Set your default endpoint of CloudStack API>"
+:url:    "<Set your default endpoint of Cloudn API>"
 :raw_output: true
 :json: true
 :users:
  :<Set your name 1>:
     :api_key:    "<Set your api key>"
     :secret_key: "<Set your secret key>"
-    :url:        "<Set your endpoint of CloudStack API>"
+    :url:        "<Set your endpoint of Cloudn API>"
     :api_location: "Cloudn"
  :<Set your name 2>:
     :api_key:    "<Set your api key>"
     :secret_key: "<Set your secret key>"
-    :url:        "<Set your endpoint of CloudStack API>"
+    :url:        "<Set your endpoint of Cloudn API>"
     :api_location: "Cloudn"
