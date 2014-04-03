@@ -1,4 +1,4 @@
-:url:    "<Set your default endpoint of CloudStack API>"
+:url:    "<Set your default endpoint of CloudStack APIs>"
 :raw_output: true
 :json: true
 :users:
