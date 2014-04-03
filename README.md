@@ -1,4 +1,5 @@
 # Cloudn CLI
+[![Gem Version](https://badge.fury.io/rb/cloudn_cli.svg)](http://badge.fury.io/rb/cloudn_cli)
 
 Cloudn CLI is command line tool for calling CloudStack API easily.
 
