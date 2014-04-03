@@ -62,7 +62,7 @@ In this step, cloning Cloudn CLI and follow some necessary steps to execute
 	
 5.Execute Cloudn CLI, and you can call any api refering the list of APIs
 
-	$ cloudstack_shell.rb
+	$ cloudn_cli
 	`> listUsers`
 
 ## Commands
