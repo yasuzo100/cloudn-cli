@@ -31,13 +31,13 @@ If you haven't installed git, please install that before this step.
 
 3.Install some necessary packages
    
-	$ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    $ git clone git://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
     $ yum install readline libtool openssl openssl-devel
 
 4.Installing the Ruby by using rbenv
 
-    $ rbenv install 2.0.0-p353
-    $ rbenv global 2.0.0-p353
+    $ rbenv install 2.0.0-p451
+    $ rbenv global 2.0.0-p451
     $ ruby --version
 
 ## Setup the Cloudn CLI
@@ -51,7 +51,7 @@ In this step, cloning Cloudn CLI and follow some necessary steps to execute
     
     $ gem install bundler rb-readline
     $ rbenv rehash 
-    $ bundle install --path=vender/bundle
+    $ bundle
     
 3.Register the environment variables
 
@@ -64,7 +64,7 @@ In this step, cloning Cloudn CLI and follow some necessary steps to execute
 5.Execute Cloudn CLI, and you can call any api refering the list of APIs
 
 	$ cloudn_cli
-	`> listUsers`
+	> listUsers
 
 ## Commands
 Cloudn CLI has some original commands as follows
