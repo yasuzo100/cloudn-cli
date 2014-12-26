@@ -18,9 +18,10 @@ module Cloudn
       @url = url.is_a?(URI::HTTP) ? url : URI.parse(url)
       @url.freeze      
       @api_location = opt[:api_location].freeze
+      @access_token = opt[:access_token].freeze
     end
 
-    attr_reader :name, :api_key, :secret_key, :url, :api_location
+    attr_reader :name, :api_key, :secret_key, :url, :api_location, :access_token
   end
 
   class Shell
@@ -66,6 +67,7 @@ module Cloudn
         api_key: @current_user.api_key,
         secret_key: @current_user.secret_key,
         api_location: @current_user.api_location,
+        access_token: @current_user.access_token,
         json: @json
       )
     end

@@ -13,10 +13,11 @@ module Cloudn
       @url = url.is_a?(URI::HTTP) ? url : URI.parse(url)
       @url.freeze      
       @api_location = opt[:api_location].freeze
+      @access_token = opt[:access_token].freeze
       @json       = opt[:json].freeze
     end
 
-    attr_reader :json, :api_location
+    attr_reader :json, :api_location, :access_token
 
     def get_raw(param_hash)
       param_str = make_param_str(param_hash)
@@ -26,7 +27,8 @@ module Cloudn
         response_text = OpenURI.open_uri(url,
 	:ssl_verify_mode => OpenSSL::SSL::VERIFY_NONE,
         "User-Agent" => "Cloudn_cli/#{RUBY_VERSION}",
-        "X-api-location" => @api_location
+        "X-api-location" => @api_location,
+        "Authorization" => @access_token
         ).read
       rescue OpenURI::HTTPError => ex
         raise ex.exception("status: #{ex.message} desc: #{ex.io.meta["x-description"]}") # update error message in detail
